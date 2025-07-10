@@ -7,6 +7,7 @@ UI/utilidades/Colores.class
 UI/componentes/paneles/Elemento.class
 UI/componentes/areasTxt/FieldTxt.class
 UI/componentes/areasTxt/TituloFrameSesion.class
+UI/componentes/botones/BotonCorazon.class
 UI/utilidades/MetodosUtiles.class
 UI/utilidades/PWTxtUI.class
 UI/controladores/SesionControlador.class

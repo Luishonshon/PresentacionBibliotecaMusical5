@@ -2,6 +2,7 @@ package UI.componentes.paneles;
 
 import UI.componentes.areasTxt.TituloFrameSesion;
 import UI.componentes.botones.Boton;
+import UI.componentes.botones.BotonCorazon;
 import UI.utilidades.Colores;
 import UI.utilidades.MetodosUtiles;
 import java.awt.Color;
@@ -28,9 +29,13 @@ public class CartaPnl extends JPanel {
         setSize(147, 163);
         setLayout(null);
         setOpaque(false);
-
-        //JLabel tit = new JLabel(elemento.getNombre());
-        JLabel tit = new JLabel("Nombre");
+        
+        elemento = new Elemento();
+        elemento.setFav(true);
+        elemento.nombre = "Nombre";
+        
+        JLabel tit = new JLabel(elemento.getNombre());
+        
         tit.setSize(127, 20);
         tit.setLocation(0, 114);
         tit.setFont(new Font("Arial", Font.PLAIN, 14));
@@ -53,9 +58,14 @@ public class CartaPnl extends JPanel {
         add(btn);
         btn.setTextoColor(Colores.BLANCO);
 
-        rectangulo = new Rectangle(127, 114, 20, 20);
-        Boton btnFav = new Boton(" ", rectangulo);
-        add(btn);
+        BotonCorazon btnFav = new BotonCorazon();
+        btnFav.setBounds(122, 114, 20, 20);
+        btnFav.setFavorito(elemento != null && elemento.getFav());
+        add(btnFav);
+
+        btnFav.addActionListener(e -> {
+            elemento.setFav(btnFav.isFavorito());
+        });
 
     }
 
@@ -75,13 +85,5 @@ public class CartaPnl extends JPanel {
 
         g2d.setColor(Colores.FONDO1);
         g2d.fillRoundRect(10, 138, 127, 22, 10, 10);
-        
-        if(elemento.getFav()){
-            g2d.setColor(Color.red);
-            g2d.fillRoundRect(127, 114, 20, 20, 10, 10);
-        }else{
-            g2d.setColor(Color.red);
-            g2d.fillRoundRect(127, 114, 20, 20, 10, 10);
-        }
     }
 }
