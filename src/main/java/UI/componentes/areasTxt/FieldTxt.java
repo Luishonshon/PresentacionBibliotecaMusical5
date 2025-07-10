@@ -1,4 +1,4 @@
-package UI.componentes.areasTxt;
+    package UI.componentes.areasTxt;
 
 import UI.utilidades.Colores;
 

@@ -18,10 +18,10 @@ public class SeleccionBoton extends JButton {
 
     @Override
     protected void paintComponent(Graphics g) {
-        Graphics2D g2 = (Graphics2D) g.create();
-        g2.setColor(Colores.LILA); // fondo personalizado
-        g2.fillRoundRect(0, 0, getWidth(), getHeight(), 10, 10);
-        g2.dispose();
+        Graphics2D g2d = (Graphics2D) g.create();
+        g2d.setColor(Colores.LILA);
+        g2d.fillRoundRect(0, 0, getWidth(), getHeight(), 10, 10);
+        g2d.dispose();
         super.paintComponent(g);
     }
 }

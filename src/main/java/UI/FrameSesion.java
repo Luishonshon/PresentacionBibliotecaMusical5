@@ -8,15 +8,16 @@ import javax.swing.*;
 import java.awt.*;
 
 public class FrameSesion extends JFrame {
+
     public static JPanel pnlSesion;
     public static JPanel pnlFrm;
+
     public FrameSesion() {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(1280, 800);
         setResizable(false);
 
         setLocationRelativeTo(null);
-
 
         setLayout(new BorderLayout());
 
@@ -34,15 +35,11 @@ public class FrameSesion extends JFrame {
         pnlSesion.setLocation(140, 30);
         pnlSesion.setBounds(140, 30, 1000, 600);
 
-
-
         pnlFrm.add(pnlSesion, BorderLayout.CENTER);
 
         InicioSesionPnl pnlInicioSesion = new InicioSesionPnl();
         mostrarVista(pnlInicioSesion);
         new SesionControlador(pnlInicioSesion);
-
-
 
         setVisible(true);
     }
@@ -57,7 +54,5 @@ public class FrameSesion extends JFrame {
         pnlSesion.revalidate();
         pnlSesion.repaint();
     }
-
-
 
 }
